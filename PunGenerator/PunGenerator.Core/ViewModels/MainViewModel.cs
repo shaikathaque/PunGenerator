@@ -8,13 +8,15 @@ namespace PunGenerator.Core.ViewModels
     public class MainViewModel : MvxViewModel
     {
         private IPunService _punService;
+        private IRandomService _randomService;
         List<Pun> puns;
-        private int randomIndex;
 
-        public MainViewModel(IPunService punService)
+        public MainViewModel(IPunService punService, IRandomService randomService)
         {
             _punService = punService;
+            _randomService = randomService;
             puns = _punService.getPunList();
+            puns = _randomService.Randomize(puns);
         }
 
         public string Question
