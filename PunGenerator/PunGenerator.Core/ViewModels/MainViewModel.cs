@@ -14,6 +14,7 @@ namespace PunGenerator.Core.ViewModels
         private int index;
         List<Pun> puns;
 
+        //load services using dependency injection
         public MainViewModel(IPunService punService, IRandomService randomService)
         {
             _punService = punService;
@@ -28,14 +29,6 @@ namespace PunGenerator.Core.ViewModels
             get { return new MvxCommand(() => NextPun()); }
         }
 
-        private void NextPun()
-        {
-            index++;
-
-            //empty string tells UI to reread all properties
-            RaisePropertyChanged("");
-        }
-
         public string Question
         {
             get { return puns[index].Question; }
@@ -44,6 +37,25 @@ namespace PunGenerator.Core.ViewModels
         public string Answer
         {
             get { return puns[index].Answer; }
+        }
+
+        private void NextPun()
+        {
+            index++;
+
+            if (index == puns.Count)
+            {
+                reset();
+            }
+
+            //empty string tells UI to reread all properties
+            RaisePropertyChanged("");
+        }
+
+        private void reset()
+        {
+            index = 0;
+            puns = _randomService.Randomize(puns);
         }
 
     }
