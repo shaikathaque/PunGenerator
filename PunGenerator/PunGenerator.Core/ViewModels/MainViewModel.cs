@@ -13,6 +13,7 @@ namespace PunGenerator.Core.ViewModels
         private IRandomService _randomService;
         private int index;
         List<Pun> puns;
+        string tapToReveal = "Tap to Reveal";
 
         //load services using dependency injection
         public MainViewModel(IPunService punService, IRandomService randomService)
@@ -22,6 +23,7 @@ namespace PunGenerator.Core.ViewModels
             puns = _punService.getPunList();
             puns = _randomService.Randomize(puns);
             index = 0;
+            Answer = tapToReveal;
         }
 
         public ICommand NextPunCommand
@@ -29,19 +31,34 @@ namespace PunGenerator.Core.ViewModels
             get { return new MvxCommand(() => NextPun()); }
         }
 
+        public ICommand TapToRevealCommand
+        {
+            get { return new MvxCommand(() => TapToReveal()); }
+        }
+
+        private void TapToReveal()
+        {
+            Answer = puns[index].Answer;
+            RaisePropertyChanged("");
+        }
+
         public string Question
         {
             get { return puns[index].Question; }
+            set { Question = value; }
         }
 
+        private string _answer;
         public string Answer
         {
-            get { return puns[index].Answer; }
+            get { return _answer; }
+            set { _answer = value; }
         }
 
         private void NextPun()
         {
             index++;
+            Answer = tapToReveal;
 
             if (index == puns.Count)
             {
