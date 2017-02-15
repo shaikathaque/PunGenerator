@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:local="http://schemas.android.com/apk/res-auto"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:id="@+id/relativeLayout"
@@ -9,11 +9,14 @@
         android:id="@+id/questionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp" 
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_centerHorizontal="true"
         android:text="Welcome to the Pun Generator!"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        local:MvxBind="Text Question"/>
+        android:gravity="center"
+        local:MvxBind="Text Question" />
     <TextView
         android:id="@+id/answerTextView"
         android:layout_width="wrap_content"
@@ -21,7 +24,7 @@
         android:layout_centerInParent="true"
         android:text="Tap to Reveal"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        local:MvxBind="Text Answer; Click TapToRevealCommand"/>
+        local:MvxBind="Text Answer; Click TapToRevealCommand" />
     <Button
         android:id="@+id/nextButton"
         android:layout_width="wrap_content"
@@ -30,5 +33,5 @@
         android:text="Next Pun"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="60dp"
-        local:MvxBind="Click NextPunCommand"/>
+        local:MvxBind="Click NextPunCommand" />
 </RelativeLayout>
