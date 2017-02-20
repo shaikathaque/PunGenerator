@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\SoundService.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Views\MainView.cs" />
   </ItemGroup>
@@ -114,6 +115,9 @@
       <Project>{b623c545-d9c1-4cd0-82a0-e3281641334c}</Project>
       <Name>PunGenerator.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\raw\BaDumTss.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

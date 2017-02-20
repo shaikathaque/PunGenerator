@@ -102,23 +102,23 @@ namespace PunGenerator.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f040000
-			public const int MvvmCrossTagId = 2130968576;
+			// aapt resource value: 0x7f050000
+			public const int MvvmCrossTagId = 2131034112;
 			
-			// aapt resource value: 0x7f040001
-			public const int MvxBindingTagUnique = 2130968577;
+			// aapt resource value: 0x7f050001
+			public const int MvxBindingTagUnique = 2131034113;
 			
-			// aapt resource value: 0x7f040004
-			public const int answerTextView = 2130968580;
+			// aapt resource value: 0x7f050004
+			public const int answerTextView = 2131034116;
 			
-			// aapt resource value: 0x7f040005
-			public const int nextButton = 2130968581;
+			// aapt resource value: 0x7f050005
+			public const int nextButton = 2131034117;
 			
-			// aapt resource value: 0x7f040003
-			public const int questionTextView = 2130968579;
+			// aapt resource value: 0x7f050003
+			public const int questionTextView = 2131034115;
 			
-			// aapt resource value: 0x7f040002
-			public const int relativeLayout = 2130968578;
+			// aapt resource value: 0x7f050002
+			public const int relativeLayout = 2131034114;
 			
 			static Id()
 			{
@@ -146,14 +146,30 @@ namespace PunGenerator.Droid
 			}
 		}
 		
+		public partial class Raw
+		{
+			
+			// aapt resource value: 0x7f040000
+			public const int BaDumTss = 2130968576;
+			
+			static Raw()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Raw()
+			{
+			}
+		}
+		
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f050001
-			public const int ApplicationName = 2131034113;
+			// aapt resource value: 0x7f060001
+			public const int ApplicationName = 2131099649;
 			
-			// aapt resource value: 0x7f050000
-			public const int Hello = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int Hello = 2131099648;
 			
 			static String()
 			{

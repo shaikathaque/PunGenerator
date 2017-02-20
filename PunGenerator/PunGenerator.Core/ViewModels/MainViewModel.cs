@@ -4,6 +4,7 @@ using PunGenerator.Core.Services.Interfaces;
 using System.Collections.Generic;
 using System.Windows.Input;
 using System;
+using MvvmCross.Platform;
 
 namespace PunGenerator.Core.ViewModels
 {
@@ -11,6 +12,7 @@ namespace PunGenerator.Core.ViewModels
     {
         private IPunService _punService;
         private IRandomService _randomService;
+        private ISoundService _soundSerivce;
         private int index;
         List<Pun> puns;
         string tapToReveal = "Tap to Reveal";
@@ -20,6 +22,7 @@ namespace PunGenerator.Core.ViewModels
         {
             _punService = punService;
             _randomService = randomService;
+            _soundSerivce = Mvx.Resolve<ISoundService>();
             puns = _punService.getPunList();
             puns = _randomService.Randomize(puns);
             index = 0;
@@ -38,8 +41,13 @@ namespace PunGenerator.Core.ViewModels
 
         private void TapToReveal()
         {
-            Answer = puns[index].Answer;
-            RaisePropertyChanged("");
+            if (Answer == tapToReveal)
+            {
+                Answer = puns[index].Answer;
+                RaisePropertyChanged("");
+
+                _soundSerivce.PlaySound("BaDumTss");
+            }
         }
 
         public string Question
