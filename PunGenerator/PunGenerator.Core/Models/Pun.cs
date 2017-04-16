@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SQLite;
 
 namespace PunGenerator.Core.Models
 {
-    public class Pun
-    {
-        public string Question { get; set; }
+	public class Pun
+	{
+		[PrimaryKey, AutoIncrement]
+		public int? Id { get; set; }
 
-        public string Answer { get; set; }
-    }
+		public string Question { get; set; }
+
+		public string Answer { get; set; }
+	}
 }
